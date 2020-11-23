@@ -1,6 +1,6 @@
 # X-ray Image Classification of Pneumonia in Pediatric Patients
 
-
+![Header](images/moritz-kindler-G66K_ERZRhM-unsplash.jpg)
 
 According to the World Health Organization, pneumonia accounts for 15% of deaths in the world for children under 5 years old, but it can be prevented with appropriate nutrition and immunization. Pneumonia that is caused by bacteria can be treated with antibiotics, but only one third of children receive the antibiotics they need (https://www.who.int/news-room/fact-sheets/detail/pneumonia). Across the world, there is a general lack of radiologists, so significant resources are spent in order to determine the results of x-ray images. Building a neural network model that can accurately detect pneumonia from x-ray images could both lessen the need for a radiologist as well as assist medical experts that may misinterpret the x-ray results.
 
@@ -28,19 +28,17 @@ Altered
 
 ### Transfer Learning
 
-Below is the structure of InceptionResNetV2. This prebuilt network was retrained, flattend to a 1D array, then fed through a dense layer with 75 neurons and a relu activation function, and finally through the output layer with a sigmoid activation function using binary crossentropy as the loss function and accuracy as the metric.
-
-The optimizer used was Stochastic Gradient Descent (SGD) with a learning rate of 0.01 and momentum of 0.9 to accelerate convergence. The batch size was 100 with total epochs at 50. Using the Model Checkpoint callback, the best model was saved according to highest validation accuracy.
-
+InceptionResNetV2 was used as a prebuilt model. Typically, most would freeze the pre-trained network or at least part of the network to use the prebuilt model weights and reduce training time. I decided to retrain the entire model to improve accuracy. This was possible to run on my Mac with the size of the dataset and using a smaller image size of 75x75x3.
 
 
 ### Final Model Confusion Matrix
 
+![Final](images/final_model_result.png)
 
 
 # Conclusion: 
 
-The final model resulted in 98.6% accuracy on the unseen test set, predicting only 1 false positive and 0 false negatives. Further research can include classifying whether pneumonia is bacterial or viral.
+The final model resulted in 100% accuracy on the unseen test set. Further research can include classifying whether pneumonia is bacterial or viral.
 
 
 
