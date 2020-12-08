@@ -16,7 +16,7 @@ Images were resized to 75x75 for efficiency when running on a local machine. Add
 The original train, test, and validation sets were 5,216, 624, and 16 images. All images and labels were combined and then resplit in order to increase the size of the test set to more accurately evaluate model results as 16 images alone would not give a clear picture. The final training set was slightly reduced to 5,153 images, the validation set was used in the modeling process to gauge model accuracy with 632 total images, and the test set was used to further gauge how the model would handle unseen data with 71 total images.
 
 ### Data Augmentation
-Data Augmentation was performed on the train set to increase our data set to improve accuracy. The initial training set was doubled with images having Pixel values under 40 replaced with 0. Essentially, this converts darker gray areas to black and allows the model to focus on the more important, lighter areas. Below is an original image compared to an altered image:
+Data Augmentation was performed on the train set to increase our data set to improve accuracy. The initial training set was doubled with images having Pixel values under 25 replaced with 0. Essentially, this converts darker gray areas to black and allows the model to focus on the more important, lighter areas. Below is an original image compared to an altered image:
 
 Original
 
